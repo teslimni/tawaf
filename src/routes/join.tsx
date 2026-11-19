@@ -339,7 +339,7 @@ function JoinPage() {
                     {copiedSummary ? "Copied summary" : "Copy summary"}
                   </button>
                   <a
-                    href={`mailto:info@ventureswork.org?subject=${encodeURIComponent(meta.title)}&body=${encodeURIComponent(summaryText)}`}
+                    href={`mailto:enquiries@tawafcollective.com?subject=${encodeURIComponent(meta.title)}&body=${encodeURIComponent(summaryText)}`}
                     className="border px-5 py-2.5 text-sm hover:border-brass"
                   >
                     Open pre-filled email
@@ -496,17 +496,17 @@ function JoinPage() {
               </div>
 
               <div className="mt-8">
-                <CopyRow label="Email" value="info@ventureswork.org" />
+                <CopyRow label="Email" value="enquiries@tawafcollective.com" />
                 <CopyRow label="Phone / WhatsApp" value="+1 574 386 4517" />
                 <div className="border-b border-band-muted/20 py-4">
                   <p className="eyebrow text-band-muted">Web</p>
                   <a
-                    href="https://www.ventureswork.org"
+                    href="https://tawafcollective.org"
                     target="_blank"
                     rel="noreferrer"
                     className="mt-1 block font-display text-lg hover:text-brass"
                   >
-                    www.ventureswork.org
+                    tawafcollective.org
                   </a>
                 </div>
                 <div className="pt-4">

@@ -435,9 +435,9 @@ export function SiteFooter({ embedded = false }: { embedded?: boolean }) {
             <p className="mt-6 max-w-md font-display text-xl italic text-band-muted">Every gift is an act of worship, an investment in people, and a seed for futures not yet imagined.</p>
           </div>
           <div>
-            <Copy label="Email" value="info@ventureswork.org" />
+            <Copy label="Email" value="enquiries@tawafcollective.com" />
             <Copy label="Phone" value="+1 574 386 4517" />
-            <div className="border-b border-band-muted/20 py-4"><p className="eyebrow text-band-muted">Web</p><a href="https://www.ventureswork.org" target="_blank" rel="noreferrer" className="mt-1 block font-display text-xl hover:text-brass">www.ventureswork.org</a></div>
+            <div className="border-b border-band-muted/20 py-4"><p className="eyebrow text-band-muted">Web</p><a href="https://tawafcollective.org" target="_blank" rel="noreferrer" className="mt-1 block font-display text-xl hover:text-brass">tawafcollective.org</a></div>
             <div className="py-4"><p className="eyebrow text-band-muted">Offices</p><p className="mt-1 font-display text-xl">Lagos, Nigeria · Indianapolis, Indiana, USA</p></div>
           </div>
         </div>
