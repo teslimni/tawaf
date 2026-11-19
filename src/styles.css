@@ -1,0 +1,110 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brass: var(--brass);
+  --color-band: var(--band);
+  --color-band-foreground: var(--band-foreground);
+  --color-band-muted: var(--band-muted);
+  --color-teal-soft: var(--teal-soft);
+  --font-display: "Gloock", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 2px;
+  --background: oklch(0.965 0.012 80);
+  --foreground: oklch(0.22 0.03 40);
+  --card: oklch(0.93 0.02 75);
+  --card-foreground: oklch(0.22 0.03 40);
+  --popover: oklch(0.965 0.012 80);
+  --popover-foreground: oklch(0.22 0.03 40);
+  --primary: oklch(0.5 0.13 38);
+  --primary-foreground: oklch(0.97 0.01 80);
+  --secondary: oklch(0.9 0.04 60);
+  --secondary-foreground: oklch(0.22 0.03 40);
+  --muted: oklch(0.93 0.02 75);
+  --muted-foreground: oklch(0.48 0.03 45);
+  --accent: oklch(0.7 0.12 75);
+  --accent-foreground: oklch(0.2 0.04 35);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.85 0.025 70);
+  --input: oklch(0.85 0.025 70);
+  --ring: oklch(0.55 0.11 70);
+  --brass: oklch(0.7 0.12 75);
+  --band: oklch(0.24 0.045 30);
+  --band-foreground: oklch(0.96 0.015 80);
+  --band-muted: oklch(0.78 0.03 60);
+  --teal-soft: oklch(0.9 0.04 60);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--brass); color: var(--accent-foreground); }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1);
+  &.is-in { opacity: 1; transform: none; }
+}
+
+@keyframes orbit { to { transform: rotate(360deg); } }
+@utility orbit-slow { animation: orbit 60s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@utility marquee { animation: marquee 40s linear infinite; }
