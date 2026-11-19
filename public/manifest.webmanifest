@@ -1,0 +1,30 @@
+{
+  "name": "The TAWAF Collective",
+  "short_name": "TAWAF",
+  "description": "Turning Zakat, Sadaqah and Islamic finance into enterprises, livelihoods and assets across Nigeria and West Africa.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F7F2EA",
+  "theme_color": "#291D16",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
