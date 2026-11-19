@@ -29,7 +29,16 @@ export function Header() {
             <a key={id} href={`#${id}`} className={`text-sm transition-colors hover:text-brass ${scrolled ? "text-muted-foreground" : "text-band-muted"}`}>{l}</a>
           ))}
         </nav>
-        <a href="#join" className="eyebrow border border-brass px-4 py-2 text-brass transition-colors hover:bg-brass hover:text-accent-foreground">Join the Fund</a>
+        <div className="flex items-center gap-4">
+          <Link
+            to="/join"
+            search={{ track: "donor" }}
+            className={`eyebrow transition-colors hover:text-brass ${scrolled ? "text-muted-foreground" : "text-band-muted"}`}
+          >
+            Donate
+          </Link>
+          <a href="#join" className="eyebrow border border-brass px-4 py-2 text-brass transition-colors hover:bg-brass hover:text-accent-foreground">Join the Fund</a>
+        </div>
       </div>
     </header>
   );
@@ -44,7 +53,7 @@ export function Hero() {
         className="absolute inset-y-0 right-0 h-full w-full object-cover object-[15%_50%] opacity-90 md:w-[62%]" />
       <div className="absolute inset-0 bg-gradient-to-r from-band via-band/70 to-transparent" />
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-6 pb-16 pt-32">
-        <p className="eyebrow text-brass">Islamic Venture Philanthropy · Nigeria &amp; West Africa</p>
+        <p className="eyebrow text-brass">Islamic Venture Philanthropy · West Africa</p>
         <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[0.98] md:text-8xl">
           Giving that does not just relieve hardship.<br />
           <em className="text-brass">It ends it.</em>
@@ -63,7 +72,7 @@ export function Hero() {
               <span className="inline-block max-w-0 overflow-hidden whitespace-nowrap align-bottom text-band-muted transition-all duration-700 group-hover:max-w-[12rem]">{r}</span>
             </span>
           ))}
-          <span className="eyebrow ml-auto text-band-muted">hover to unfold · seven circuits</span>
+          <span className="eyebrow ml-auto text-band-muted">hover to unfold · seven cycles</span>
         </div>
       </div>
     </section>
@@ -72,7 +81,7 @@ export function Hero() {
 
 export function Why() {
   const items = [
-    ["Capital that excludes", "Many Muslim entrepreneurs in Nigeria run informal businesses and stay small because conventional credit is interest-bearing and often out of reach."],
+    ["Capital that excludes", "Many Muslim entrepreneurs in West Africa run informal businesses and stay small because conventional credit is interest-bearing and often out of reach."],
     ["Charity that stops short", "Zakat and Sadaqah usually meet urgent needs well, but they rarely build the income systems that prevent the next crisis."],
     ["An architecture already in place", "Zakat, Qard Hassan and partnership finance together form a complete system for economic justice. TAWAF puts all of it to work, in sequence."],
   ];
@@ -80,7 +89,7 @@ export function Why() {
     <section className="mx-auto grid max-w-7xl gap-16 px-6 py-28 md:grid-cols-12">
       <div className="md:col-span-5">
         <p className="eyebrow text-brass">Why TAWAF exists</p>
-        <h2 className="reveal mt-5 font-display text-4xl leading-tight md:text-5xl">What if Islamic giving worked twice: once to lift a family out of crisis, and again to keep them out for good?</h2>
+        <h2 className="reveal mt-5 font-display text-4xl leading-tight md:text-5xl">We make Islamic giving work twice: once to lift a family out of crisis, and again to keep them out for good.</h2>
         <img src={hands} alt="Workers at the Kofar Mata dye pits in Kano" loading="lazy" className="reveal mt-10 aspect-[4/5] w-full max-w-sm object-cover" />
       </div>
       <ol className="space-y-0 md:col-span-6 md:col-start-7 md:pt-24">
@@ -177,16 +186,16 @@ export function Journey() {
         <div>
           <p className="eyebrow text-brass">The Journey</p>
           <h2 className="mt-5 font-display text-4xl md:text-6xl">Seven phases, one program</h2>
-          <p className="mt-6 max-w-md text-band-muted">Tawaf is completed in seven circuits. Our program follows seven phases, from first application to a founder who strengthens the ecosystem for those who come after.</p>
+          <p className="mt-6 max-w-md text-band-muted">Tawaf is completed in seven cycles. Our program follows seven phases, from first application to a founder who strengthens the ecosystem for those who come after.</p>
           <div key={a} className="mt-12 min-h-[12rem] animate-in fade-in slide-in-from-right-4 duration-500">
-            <p className="eyebrow text-band-muted">Circuit {a + 1} of 7 {phases[a]!.note && <span className="ml-3 text-brass">· {phases[a]!.note}</span>}</p>
+            <p className="eyebrow text-band-muted">Cycle {a + 1} of 7 {phases[a]!.note && <span className="ml-3 text-brass">· {phases[a]!.note}</span>}</p>
             <h3 className="mt-3 font-display text-3xl">{phases[a]!.t}</h3>
             <p className="mt-4 max-w-md text-band-muted">{phases[a]!.d}</p>
           </div>
           <div className="flex gap-3">
             <button onClick={() => { setA((a + 6) % 7); setAuto(false); }} className="border border-band-muted/40 px-4 py-2 hover:border-brass">←</button>
             <button onClick={() => { setA((a + 1) % 7); setAuto(false); }} className="border border-band-muted/40 px-4 py-2 hover:border-brass">→</button>
-            <button onClick={() => setAuto(!auto)} className="eyebrow ml-2 text-band-muted hover:text-brass">{auto ? "Pause" : "Play"} circuit</button>
+            <button onClick={() => setAuto(!auto)} className="eyebrow ml-2 text-band-muted hover:text-brass">{auto ? "Pause" : "Play"} cycle</button>
           </div>
         </div>
       </div>
@@ -203,15 +212,25 @@ export function Governance() {
           <p className="eyebrow text-brass">Shariah Governance &amp; Fund Integrity</p>
           <h2 className="reveal mt-5 font-display text-4xl md:text-5xl">Rigor that a scholar, an auditor and an investor can all verify</h2>
           <p className="mt-6 text-muted-foreground">Faith-aligned capital earns trust when its rules are clear and enforced. Every instrument we use is reviewed and approved before a single naira moves.</p>
-          <div className="mt-10 grid grid-cols-3 gap-2 text-center">
-            {["Zakat fund", "Qard Hassan revolving", "Partnership capital"].map((p) => (
-              <div key={p} className="border border-dashed border-primary bg-teal-soft p-4">
-                <div className="mx-auto h-8 w-8 rounded-full border-2 border-primary" />
-                <p className="mt-3 text-xs">{p}</p>
+          <div className="mt-10 divide-y border bg-card">
+            {[
+              ["01", "Zakat Pool", "Tamlik · 100% ownership", "Passes directly to eligible founders. Zero equity, zero repayment."],
+              ["02", "Qard Hassan Pool", "Principal-only revolving", "Zero interest or fees. Repayments recycle to fund the next founder."],
+              ["03", "Partnership Capital", "Mudarabah & Musharakah", "Profit and loss shared by contract, never fixed interest."],
+            ].map(([num, name, tag, rule]) => (
+              <div key={name} className="flex gap-4 p-4">
+                <span className="font-mono text-xs text-brass">{num}</span>
+                <div>
+                  <div className="flex flex-wrap items-baseline gap-x-2">
+                    <h3 className="font-display text-lg">{name}</h3>
+                    <span className="eyebrow text-primary">{tag}</span>
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">{rule}</p>
+                </div>
               </div>
             ))}
           </div>
-          <p className="eyebrow mt-3 text-muted-foreground">Three pools · never mixed</p>
+          <p className="eyebrow mt-3 text-muted-foreground">Three segregated pools · never mixed</p>
         </div>
         <ul className="lg:col-span-6 lg:col-start-7">
           {governance.map((g, i) => (
@@ -442,7 +461,7 @@ export function SiteFooter({ embedded = false }: { embedded?: boolean }) {
           </div>
         </div>
         <footer className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-band-muted/20 pt-6 text-xs text-band-muted">
-          <span>Copyright {year} | The TAWAF Collective · A Muslim Business Fund program by Ventures Work. All rights reserved.</span>
+          <span>Copyright {year} | The TAWAF Collective · A Muslim Business Incubation and Accelerator programme. All rights reserved.</span>
           <span className="eyebrow">Shariah-governed · Riba-free · Independently reported</span>
         </footer>
       </div>
@@ -456,7 +475,7 @@ export function Join() {
     <section id="join" className="grain bg-band py-28 text-band-foreground">
       <div className="mx-auto max-w-7xl px-6">
         <p className="eyebrow text-brass">Get Involved</p>
-        <h2 className="mt-5 font-display text-4xl md:text-6xl">Three ways to join the circuit</h2>
+        <h2 className="mt-5 font-display text-4xl md:text-6xl">Three ways to join the cycle</h2>
         <div className="mt-12 flex flex-wrap gap-2">
           {ways.map((x, i) => (
             <button key={x.who} onClick={() => setW(i)} className={`eyebrow border px-4 py-3 transition-colors ${w === i ? "border-brass bg-brass text-accent-foreground" : "border-band-muted/30 text-band-muted hover:border-brass"}`}>{x.who}</button>

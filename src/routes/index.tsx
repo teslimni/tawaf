@@ -6,7 +6,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "The TAWAF Collective · Islamic Venture Philanthropy" },
-      { name: "description", content: "Turning Zakat, Sadaqah and Islamic finance into enterprises, livelihoods and assets across Nigeria and West Africa." },
+      { name: "description", content: "Turning Zakat, Sadaqah and Islamic finance into enterprises, livelihoods and assets across West Africa." },
       { property: "og:title", content: "The TAWAF Collective" },
       { property: "og:description", content: "Giving that does not just relieve hardship. It ends it." },
       { property: "og:type", content: "website" },

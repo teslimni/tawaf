@@ -17,7 +17,7 @@ export const Route = createFileRoute("/join")({
   },
   head: () => ({
     meta: [
-      { title: "Join the Circuit · The TAWAF Collective" },
+      { title: "Join the Cycle · The TAWAF Collective" },
       {
         name: "description",
         content: "Connect with The TAWAF Collective as an institutional partner, Zakat or Sadaqah donor, or Muslim entrepreneur.",
@@ -163,7 +163,8 @@ function JoinPage() {
     setErrorMsg("");
   }, [track, path]);
 
-  const formEndpoint = import.meta.env.VITE_FORM_ENDPOINT as string | undefined;
+  const formEndpoint =
+    (import.meta.env.VITE_FORM_ENDPOINT as string | undefined) || "https://formspree.io/f/xljblajn";
   const bookingUrl = import.meta.env.VITE_BOOKING_URL as string | undefined;
   const whatsappNumber = (import.meta.env.VITE_WHATSAPP_NUMBER as string | undefined) ?? "15743864517";
 
@@ -242,7 +243,7 @@ function JoinPage() {
 
       <main className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <p className="eyebrow text-brass">Get Involved</p>
-        <h1 className="mt-4 font-display text-4xl md:text-6xl">Join the circuit</h1>
+        <h1 className="mt-4 font-display text-4xl md:text-6xl">Join the cycle</h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
           Choose how you want to participate. Leave your details below, message us on WhatsApp with one tap, or reach our team directly—no blank email required.
         </p>
