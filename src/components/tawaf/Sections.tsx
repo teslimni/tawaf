@@ -49,8 +49,8 @@ const acronym = [["T", "ransforming"], ["A", "ltruism into"], ["W", "ork,"], ["A
 export function Hero() {
   return (
     <section id="top" className="grain relative min-h-[100svh] overflow-hidden bg-band text-band-foreground">
-      <img src={hero} alt="Stacks of printed fabric at a Nigerian textile market"
-        className="absolute inset-y-0 right-0 h-full w-full object-cover object-[15%_50%] opacity-90 md:w-[62%]" />
+      <img src={hero} alt="West African Muslim woman founder inspecting a handcrafted leather and adire bag in her sunlit design atelier while an apprentice stitches in the background"
+        className="absolute inset-y-0 right-0 h-full w-full object-cover object-[70%_50%] opacity-90 md:w-[72%]" />
       <div className="absolute inset-0 bg-gradient-to-r from-band via-band/70 to-transparent" />
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-6 pb-16 pt-32">
         <p className="eyebrow text-brass">Islamic Venture Philanthropy · West Africa</p>
@@ -90,7 +90,7 @@ export function Why() {
       <div className="md:col-span-5">
         <p className="eyebrow text-brass">Why TAWAF exists</p>
         <h2 className="reveal mt-5 font-display text-4xl leading-tight md:text-5xl">We make Islamic giving work twice: once to lift a family out of crisis, and again to keep them out for good.</h2>
-        <img src={hands} alt="Workers at the Kofar Mata dye pits in Kano" loading="lazy" className="reveal mt-10 aspect-[4/5] w-full max-w-sm object-cover" />
+        <img src={hands} alt="Master woodworker and young apprentice calibrating a precision woodworking lathe in a sunlit West African furniture workshop" loading="lazy" className="reveal mt-10 aspect-[4/5] w-full max-w-sm object-cover" />
       </div>
       <ol className="space-y-0 md:col-span-6 md:col-start-7 md:pt-24">
         {items.map(([t, d], i) => (
@@ -265,7 +265,7 @@ export function Impact() {
   const [k, setK] = useState(keys[0]!);
   return (
     <section id="impact" className="relative bg-band text-band-foreground">
-      <img src={market} alt="Aerial view of a busy tomato market in Lagos" loading="lazy" className="h-[50vh] w-full object-cover opacity-70" />
+      <img src={market} alt="Teams inspecting and palletizing packaged goods inside a modern West African agro-processing and export fulfillment warehouse" loading="lazy" className="h-[50vh] w-full object-cover opacity-70" />
       <div className="mx-auto max-w-7xl px-6 py-24">
         <p className="eyebrow text-brass">Impact &amp; Ambition</p>
         <h2 className="mt-5 max-w-3xl font-display text-4xl md:text-6xl">We are building proof, and we will measure it</h2>
